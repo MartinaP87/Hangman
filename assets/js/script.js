@@ -162,7 +162,26 @@ function buildHangman() {
 *  Function that defines when the user wins 
 */
 function victory() {
-
+    let results = [];
+    for (let i = 0; i < letters.length; i++) {
+      if (letters[i].style.visibility === "visible") {
+        results.push("true");
+      } else {
+        results.push("false");
+      }
+        if (results.length === letters.length && results[i] === "true" && results.includes("false") === false) {
+        incrementWon();
+        changeStyles();
+        removeObject();
+        manBox.style.backgroundImage = "url(assets/images/imgvic.png)";
+        finalMessageBox.innerHTML = `
+          <h3>Congratulations! You found the word!</h3>
+          <h4><strong>${pickedWord}</strong>:</h4> 
+          <p><em>${pickedWordMeaning}</em></p>
+          `;
+          document.body.removeEventListener("keypress", keyPressed);
+      }      
+    }
 }
 /**
 * Gets the current score of won games and increments it by 1

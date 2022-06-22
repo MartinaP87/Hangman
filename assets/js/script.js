@@ -187,13 +187,15 @@ function victory() {
 * Gets the current score of won games and increments it by 1
 */
 function incrementWon() {
-
+    let wonScore = parseInt(document.getElementById("won").innerText);
+    document.getElementById("won").innerText = ++wonScore;
 }
 /**
 * Gets the current score of lost games and increments it by 1
 */
 function incrementLost() {
-    
+    let lostScore = parseInt(document.getElementById("lost").innerText);
+    document.getElementById("lost").innerText = ++lostScore;   
 }
 /**
 * Sets new styling properties when the game is over

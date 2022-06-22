@@ -103,7 +103,16 @@ function pickObject() {
 * each box has the respective letter in it.
 */
 function buildBoxes() {
-    
+    console.log(pickedWord);
+    let boxes = '';
+    for (let i = 0; i < pickedWord.length; i++) {
+      boxes += `
+       <div class="letter-container">
+       <h2 class="word-letters">${pickedWord[i]}</h2>
+       </div>
+       `;
+    }
+    document.getElementById("boxes-area").innerHTML = boxes;
 }
 /**
 * Function to check if the key pressed is included in the picked word; 

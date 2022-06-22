@@ -166,6 +166,7 @@ img{
     #input-box > h3 {
         padding-top: 20px;
         font-size: 100%;
+        padding: 5px 7.5vw 0 15vw;
     }
     /* Responsive instructions,*/
     #input-box > p {

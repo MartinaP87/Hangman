@@ -4,8 +4,8 @@
 Hangman is a classic word game. This game is a fun way of learning vocabulary, and it's especially useful for remembering the spelling of new words.  
 The website's goal is to provide a challenging, educational game to entertain the online user. 
 Hangman's target is adults looking for a short game with no long-term commitments, something familiar that brings back memories of the good old days, and young adults keen to learn new words in a fun way.  
-
-##FEATURES:
+<img src ="readme-images/responsive.png">
+## FEATURES:
 
 ### The Landing Page
  <img src ="readme-images/landing-page.png">
@@ -128,15 +128,14 @@ even though some warning messages have been detected due to the usage of 'templa
 
 ## Bugs:
 ### First Bug
--When pressing the letters not included in the secret word, I noticed that the image of the hangman wasn't changing.
--This was because for the images, I had used a relative file path in script.js:
+- When pressing the letters not included in the secret word, I noticed that the image of the hangman wasn't changing.
+- This was because for the images, I had used a relative file path in script.js:
 url(../images/img0.png)
--Replacing it with url(assets/images/img0.png) fixed the problem
+- Replacing it with url(assets/images/img0.png) fixed the problem
 ### Second Bug
 - When writing the code for the buildHangman function, I set the variable numberOfAttempts = 0, 
 - This had made the first wrong attempt to be considered as 0, making the game run 1 step longer and delaying the hangman images.
 - Setting the variable numberOfAttempts = 1, fixed the problem
-
 
 ## Deployment:
 The site was deployed to GitHub pages. The steps to deploy are as follows:

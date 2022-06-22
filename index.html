@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="hangman game">
     <meta name="keywords" content="hangman, word game, guessing game">
+    <!--Link to styling file-->
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Hangman</title>
 </head>
   <body>
+    <!--Header-->
     <header>
+        <!--Name of the Game-->
         <h1>HANGMAN</h1>
+        <!--Score Area-->
         <div class="face">
           <img src="assets/images/won.png" alt="happy face">
           <span id="won">0</span>
@@ -21,18 +25,23 @@
           <span id="lost">0</span>
         </div>
       </header>
+      <!--Message area appearing at the end of the game-->
       <div id="last-window">
         <div id="final-message"></div>
         <button id="restart">Play again!</button>
       </div>
+      <!--Instructions and Input Area-->
       <div id="input-box">
         <h2>Instructions:</h2>
         <p>Try to find the secret word by typing letters.
           If your guess is correct, your letter will appear in the respective space.
           However, every wrong guess will bring you closer to being "hanged".<br>Have Fun!!!</p>
       </div>
+      <!--Hangman area-->
       <div id="theman"></div>
+      <!--Secret word area-->
       <div id="boxes-area"></div>
+      <!--Link to JavaScript file-->
       <script src="assets/js/script.js"></script>    
   </body>
 </html>

@@ -90,8 +90,13 @@ const maxNumberOfAttempts = 7;
 document.body.addEventListener("keypress", keyPressed); 
 //Add event listener to button
 playAgain.addEventListener("click", restart);
+/**
+* Function that picks a random object from the wordsList array.
+*/
 function pickObject() {
-    
+    let ind1 = Math.floor(Math.random() * wordsList.length);
+    console.log(ind1);
+    return wordsList[ind1];
 }
 /**
 * Main function: it creates divs based on how many letters are in the word of the chosen object;

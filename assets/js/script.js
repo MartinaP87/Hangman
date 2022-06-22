@@ -201,14 +201,19 @@ function incrementLost() {
 * Sets new styling properties when the game is over
 */
 function changeStyles() {
-    
+    manBox.style.margin = "15% 0 0 40%";
+    manBox.style.width = "45%";
+    manBox.style.height = "50vw";
+    inputBox.style.display = "none";
+    lastWindow.style.display = "inline";
 }
 /**
 * Remove the chosen object from the wordsList array, 
 * so it won't appear in the next game
 */
 function removeObject () {
-    
+    wordsList.splice(indObject, 1);
+    console.log(wordsList);
 }
 /**
 * Restarts the game resetting the screen to the initial set up;

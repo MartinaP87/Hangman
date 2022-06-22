@@ -120,7 +120,22 @@ function buildBoxes() {
 * otherwise it starts to build the hangman;
 */
 function keyPressed(event) {
-    
+     // Add key pressed in the input box. 
+     inputLettersList.push(`  ${event.key}`);
+     inputBox.innerHTML = `
+           <h2>Letters tried:</h2>
+           <h3> ${inputLettersList}</h3>
+           `;
+     if (pickedWord.includes(event.key)) {
+       for (let i = 0; i < pickedWord.length; i++) {
+         if (event.key === pickedWord[i]) {
+           letters[i].style.visibility = "visible";
+         }
+       }
+       victory();
+     } else {
+       buildHangman();
+     }
 } 
 /**
 * The function changes the image every time the answer is wrong;

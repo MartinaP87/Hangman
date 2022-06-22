@@ -222,5 +222,20 @@ function removeObject () {
 * and adds the event listener to the body.
 */
 function restart () {
-
+    lastWindow.style.display = "none";
+    manBox.style.backgroundImage = "url(assets/images/img0.png)";
+    manBox.style.margin = "0px 15% 0 40%";
+    inputBox.style.display = "inline";
+    inputBox.innerHTML = "<h2>Letters tried:</h2>";
+    let newChosenObject = pickObject();
+    indObject = wordsList.indexOf(newChosenObject);
+    console.log(indObject);
+    pickedWord = newChosenObject.word;
+    console.log(pickedWord);
+    pickedWordMeaning = newChosenObject.definition;
+    buildBoxes();
+    inputLettersList = [];
+    numberOfAttempts = 0;
+    document.body.addEventListener("keypress", keyPressed);
 }
+buildBoxes();

@@ -142,7 +142,21 @@ function keyPressed(event) {
 * the last image ends the game, resulting in the user's failure.
 */
 function buildHangman() {
-    
+    if (numberOfAttempts < maxNumberOfAttempts) {
+        numberOfAttempts++;
+        manBox.style.backgroundImage = `url(assets/images/img${numberOfAttempts}.png)`;
+      }
+    if (numberOfAttempts === maxNumberOfAttempts) {
+        incrementLost();
+        changeStyles();
+        removeObject()
+        finalMessageBox.innerHTML = `
+           <h3>Oh nooo!<br>You haven't found the word this time... but, if you learn from a loss you have not lost!<br>The word was:</h3>
+           <h4><strong>${pickedWord}:</strong></h4>  
+           <p><em>${pickedWordMeaning}</em></p>
+            `;
+        document.body.removeEventListener("keypress", keyPressed);
+      }
 }  
 /**
 *  Function that defines when the user wins 

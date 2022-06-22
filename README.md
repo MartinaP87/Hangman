@@ -1,5 +1,5 @@
 # HANGMAN
-[View the live project here]()
+[View the live project here](https://martinap87.github.io/Hangman/)
 
 Hangman is a classic word game. This game is a fun way of learning vocabulary, and it's especially useful for remembering the spelling of new words.  
 The website's goal is to provide a challenging, educational game to entertain the online user. 
@@ -82,21 +82,16 @@ Testing:
 </tr>
 <tr>
 <td>The user loses the game</td>
-<td>Show the final message and play again button</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>The user loses the game</td>
 <td>Increase the lost game score</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>The user wins the game</td>
-<td>Show the final message and the play again button</td>
 <td>Yes</td>
 </tr>
 <td>The user wins the game</td>
 <td>Increase the won game score</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>The game is over</td>
+<td>Show the final message and play again button</td>
 <td>Yes</td>
 </tr>
 <tr>
@@ -119,13 +114,13 @@ Testing:
 </table>
 
 - All the pages went through Lighthouse in dev tools, giving positive results for readability, color contrast, and accessibility:
-
+<img src="readme-images/lighthouse.png">
 
 ### Validator Testing:
 - HTML
-No errors were returned when passing through the official [W3C validator]();
+No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmartinap87.github.io%2FHangman%2F);
 - CSS
-No errors were found when passing through the official [(Jigsaw) validator]();
+No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmartinap87.github.io%2FHangman%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en);
 - JSHint
 No errors were found when passing through the official [(JSHint) validator](), 
 even though some warning messages have been detected due to the usage of 'template literal syntax'.
@@ -151,7 +146,7 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 - Once the main branch has been selected, click on Save;
 - At the top of the page will then appear the message “Your site is ready to be published at” and the URL;
 - Refresh the page, and the message will change to “Your site is published at” and the active URL.
-- The live link can be found here - 
+- The live link can be found here - https://martinap87.github.io/Hangman/
 
 ### Local Deployment:
 To work on the code from a local device, the steps to clone the repository are as follows:

@@ -236,7 +236,7 @@ function restart () {
     pickedWordMeaning = newChosenObject.definition;
     buildBoxes();
     inputLettersList = [];
-    numberOfAttempts = 0;
+    numberOfAttempts = 1;
     document.body.addEventListener("keypress", keyPressed);
 }
 buildBoxes();

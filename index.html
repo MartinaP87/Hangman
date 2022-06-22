@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Hangman</title>
 </head>
-<body>
+  <body>
     <header>
         <h1>HANGMAN</h1>
         <div class="face">
@@ -21,6 +21,18 @@
           <span id="lost">0</span>
         </div>
       </header>
- <script src="assets/js/script.js"></script>    
-</body>
+      <div id="last-window">
+        <div id="final-message"></div>
+        <button id="restart">Play again!</button>
+      </div>
+      <div id="input-box">
+        <h2>Instructions:</h2>
+        <p>Try to find the secret word by typing letters.
+          If your guess is correct, your letter will appear in the respective space.
+          However, every wrong guess will bring you closer to being "hanged".<br>Have Fun!!!</p>
+      </div>
+      <div id="theman"></div>
+      <div id="boxes-area"></div>
+      <script src="assets/js/script.js"></script>    
+  </body>
 </html>

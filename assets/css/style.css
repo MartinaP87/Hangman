@@ -100,8 +100,8 @@ img{
 /*Style the window that pops up when the game is over;*/
 #last-window {
     display: none;
-    width: 35%;
-    height: 45vw;
+    width: 44%;
+    height: 58vw;
     position: absolute;
     background-size: cover;
     background-repeat: no-repeat;

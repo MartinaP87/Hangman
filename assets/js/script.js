@@ -84,7 +84,7 @@ let letters = document.getElementsByClassName("word-letters");
 let finalMessageBox = document.getElementById("final-message");
 let lastWindow = document.getElementById("last-window");
 let playAgain = document.getElementById("restart");
-let numberOfAttempts = 0;
+let numberOfAttempts = 1;
 const maxNumberOfAttempts = 7;
 // Add event listener to the body
 document.body.addEventListener("keypress", keyPressed); 
@@ -143,13 +143,14 @@ function keyPressed(event) {
 */
 function buildHangman() {
     if (numberOfAttempts < maxNumberOfAttempts) {
-        numberOfAttempts++;
         manBox.style.backgroundImage = `url(assets/images/img${numberOfAttempts}.png)`;
+        numberOfAttempts++;
       }
-    if (numberOfAttempts === maxNumberOfAttempts) {
+    else if (numberOfAttempts === maxNumberOfAttempts) {
         incrementLost();
         changeStyles();
         removeObject()
+        manBox.style.backgroundImage = `url(assets/images/img${numberOfAttempts}.png)`;
         finalMessageBox.innerHTML = `
            <h3>Oh nooo!<br>You haven't found the word this time... but, if you learn from a loss you have not lost!<br>The word was:</h3>
            <h4><strong>${pickedWord}:</strong></h4>  

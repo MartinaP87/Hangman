@@ -1,108 +1,178 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# HANGMAN
+[View the live project here]()
 
-Welcome MartinaP87,
+Hangman is a classic word game. This game is a fun way of learning vocabulary, and it's especially useful for remembering the spelling of new words.  
+The website's goal is to provide a challenging, educational game to entertain the online user. 
+Hangman's target is adults looking for a short game with no long-term commitments, something familiar that brings back memories of the good old days, and young adults keen to learn new words in a fun way.  
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+##FEATURES:
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+### The Landing Page
+ <img src ="readme-images/landing-page.png">
+- The page landing includes a background image with all the other features overlaid to allow the user to see the content of the site.
 
-## Gitpod Reminders
+### The Instructions
+<img src="readme-images/instructions.png">
+- In this section, the user has an explanation of how the game works.
+- This section will desappear when the game starts leaving room for the Input section.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### The Input Board
+<img src="readme-images/input.png">
+- This section appears when the user types its first guessed letter, and it keeps adding each letter typed.
+- This part is a reminder of the letters typed, and it helps the user to proceed with the game without making the same mistakes.
 
-`python3 -m http.server`
+### The Hangman
+<img src="readme-images/hangman.png">
+- This section changes the background every time the user types the wrong letter building the "hangman"; when the hangman is complete, the game is over, and the user loses. However, if the user guesses the word before then, it will display the victory background image.
+- From this feature, the user can see how close he/she is to lose the game.
 
-A blue button should appear to click: _Make Public_,
+### The Score
+<img src="readme-images/scores.png">
+- The score will update every time the game is over: if the user wins, the score under the happy face will increase by 1; if the user loses, the score under the sad face will increase by 1.
+- From this feature, the user can see how many games have been lost or won.
 
-Another blue button should appear to click: _Open Browser_.
+### The Underscores
+<img src="readme-images/letters.png">
+- This section generates every time the game is loaded. Every underscore represents a letter of the chosen word. When the user guesses the correct letter, it gets displayed in the respective space.
+- From this feature, the user can see how long the word is and, through correct guessings,  the letter's position. This section helps the user to win the game.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### The Final Message
+<img src="readme-images/final-message.png">
+- This section pops up when the game is over. If the user wins, it shows a message of congratulations, otherwise of encouragement. Either way, below the statement, it displays the secret word, its definition, and the "play again!" button.
+- This section acknowledges the user of the game's result and enriches the user's vocabulary by defining the meaning of the word that could have been previously unknown. 
 
-A blue button should appear to click: _Make Public_,
+### The "Play Again!" Button
+<img src="readme-images/restart.png">
+- This clickable button restarts the game without affecting the scores.
+It resets the hangman, the input section, and along with the word, it updates the underscore section.
+- This button is displayed when the game is over and allows the user to play again.
 
-Another blue button should appear to click: _Open Browser_.
+## Testing:
+Testing: 
+- The project has been tested on different browsers to ensure the website functions correctly, and the results are satisfactory in Chrome, Safari, Opera, and Firefox. 
+- I can confirm that the website is responsive after going through all the standard portals available in dev tools. 
+<table>
+<thead>
+<tr>
+<th>Action or Happening</th>
+<th>Expected Result</th>
+<th>Successful?<th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Click on website url</td>
+<td>Open the landing page</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Type any key</td>
+<td>Key appears in the input window</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Type any key</td>
+<td>If the secret word includes the key, it appears in its space</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Type any key</td>
+<td>If the secret word does not include the key, start to build the hangman</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>The user loses the game</td>
+<td>Show the final message and play again button</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>The user loses the game</td>
+<td>Increase the lost game score</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>The user wins the game</td>
+<td>Show the final message and the play again button</td>
+<td>Yes</td>
+</tr>
+<td>The user wins the game</td>
+<td>Increase the won game score</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>The game is over</td>
+<td>Remove the object containing the word from the list of candidates for the next game</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>The game is over</td>
+<td>Stop taking any key</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Click on the play again button</td>
+<td>Start a new game</td>
+<td>Yes</td>
+</tr>
+<tr>
+</tbody>
+</table>
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- All the pages went through Lighthouse in dev tools, giving positive results for readability, color contrast, and accessibility:
 
-To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+### Validator Testing:
+- HTML
+No errors were returned when passing through the official [W3C validator]();
+- CSS
+No errors were found when passing through the official [(Jigsaw) validator]();
+- JSHint
+No errors were found when passing through the official [(JSHint) validator](), 
+even though some warning messages have been detected due to the usage of 'template literal syntax'.
+<img src ="readme-images/jshint.png">
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## Bugs:
+### First Bug
+-When pressing the letters not included in the secret word, I noticed that the image of the hangman wasn't changing.
+-This was because for the images, I had used a relative file path in script.js:
+url(../images/img0.png)
+-Replacing it with url(assets/images/img0.png) fixed the problem
+### Second Bug
+- When writing the code for the buildHangman function, I set the variable numberOfAttempts = 0, 
+- This had made the first wrong attempt to be considered as 0, making the game run 1 step longer and delaying the hangman images.
+- Setting the variable numberOfAttempts = 1, fixed the problem
 
-------
 
-## Release History
+## Deployment:
+The site was deployed to GitHub pages. The steps to deploy are as follows:
+- In the GitHub repository, navigate to the Settings tab;
+- On the menu on the left, under Code and Automation, click on Pages;
+- From the source section drop-down menu, select the Main Branch;
+- Once the main branch has been selected, click on Save;
+- At the top of the page will then appear the message “Your site is ready to be published at” and the URL;
+- Refresh the page, and the message will change to “Your site is published at” and the active URL.
+- The live link can be found here - 
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### Local Deployment:
+To work on the code from a local device, the steps to clone the repository are as follows:
+- In the GitHub repository click the Code button above the list of files;
+- Copy the URL displayed on the clone tab;
+- Open the terminal on your device;
+- Type git clone and paste the URL copied earlier;
+- Press enter.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+## Credit:
+Some of the structure and contents for the README.md file were taken from the Tastes Of Autumn project.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+### Media
+The images were taken from:
+- [Shutterstock](https://www.shutterstock.com/image-photo/wooden-color-pencils-on-white-paper-1005954823) for the body background;
+- [Shutterstock](https://www.shutterstock.com/image-photo/close-white-ripped-piece-paper-on-226006654) for the final message background;
+- [Pexels](https://www.pexels.com/it-it/foto/gomma-da-cancellare-pelikan-br-40-rossa-e-blu-su-superficie-bianca-35202/) for the play again button;
+- The developer drew the background images of the hangman.
+- The screenshot of the website on different ports was from [Mockup screen generator](https://ui.dev/amiresponsive);
+- The fonts were taken from [Google Fonts](https://fonts.google.com/);
+- The favicons was generated and taken from [Faviocon](https://favicon.io/)];
+- The words were taken from a list in [hangmanwords](https://www.hangmanwords.com/words)
+- The words definitions were taken from [Wictionary](https://en.wiktionary.org/wiki/Wiktionary:Main_Page).
+- The body background image was compressed in [Tinyjpg](https://tinyjpg.com/);

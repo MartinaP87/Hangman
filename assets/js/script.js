@@ -94,9 +94,8 @@ playAgain.addEventListener("click", restart);
 * Function that picks a random object from the wordsList array.
 */
 function pickObject() {
-    let ind1 = Math.floor(Math.random() * wordsList.length);
-    console.log(ind1);
-    return wordsList[ind1];
+    let indexObject = Math.floor(Math.random() * wordsList.length);
+    return wordsList[indexObject];
 }
 /**
 * Main function: it creates divs based on how many letters are in the word of the chosen object;
@@ -149,7 +148,7 @@ function buildHangman() {
     else if (numberOfAttempts === maxNumberOfAttempts) {
         incrementLost();
         changeStyles();
-        removeObject()
+        removeObject();
         manBox.style.backgroundImage = `url(assets/images/img${numberOfAttempts}.png)`;
         finalMessageBox.innerHTML = `
            <h3>Oh nooo!<br>You haven't found the word this time... but, if you learn from a loss you have not lost!<br>The word was:</h3>
@@ -170,7 +169,7 @@ function victory() {
       } else {
         results.push("false");
       }
-        if (results.length === letters.length && results[i] === "true" && results.includes("false") === false) {
+      if (results.length === letters.length && results[i] === "true" && results.includes("false") === false) {
         incrementWon();
         changeStyles();
         removeObject();
@@ -180,7 +179,7 @@ function victory() {
           <h4><strong>${pickedWord}</strong>:</h4> 
           <p><em>${pickedWordMeaning}</em></p>
           `;
-          document.body.removeEventListener("keypress", keyPressed);
+        document.body.removeEventListener("keypress", keyPressed);
       }      
     }
 }
@@ -214,7 +213,6 @@ function changeStyles() {
 */
 function removeObject () {
     wordsList.splice(indObject, 1);
-    console.log(wordsList);
 }
 /**
 * Restarts the game resetting the screen to the initial set up;
@@ -230,9 +228,7 @@ function restart () {
     inputBox.innerHTML = "<h2>Letters tried:</h2>";
     let newChosenObject = pickObject();
     indObject = wordsList.indexOf(newChosenObject);
-    console.log(indObject);
     pickedWord = newChosenObject.word;
-    console.log(pickedWord);
     pickedWordMeaning = newChosenObject.definition;
     buildBoxes();
     inputLettersList = [];
